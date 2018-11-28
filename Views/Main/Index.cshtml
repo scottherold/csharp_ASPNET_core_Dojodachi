@@ -1,0 +1,54 @@
+<!-- Spot for model -->
+@model MyDojodachi
+
+<div class="row justify-content-center">
+    <div class="col-lg-10 border border-dark rounded justify-content-center m-3 bg-white">
+        <div class="col-12 mt-3">
+            <div class="row justify-content-center mb-3">
+                <div class="col-3">
+                    <h5 class="text-center">Fullness: @Model.Fullness</h5>
+                </div>
+                <div class="col-3">
+                    <h5 class="text-center">Happiness: @Model.Happiness</h5>
+                </div>
+                <div class="col-3">
+                    <h5 class="text-center">Meals: @Model.Meals</h5>
+                </div>
+                <div class="col-3">
+                    <h5 class="text-center">Energy: @Model.Energy</h5>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-2 text-light">
+                <div class="col-8 text-center p-2 border border-light rounded bg-dark">
+                    <img src="~/images/dojocat.jpg" alt="Your Dojodachi!" style="width: 30%;" class="m-5 border border-success rounded" />
+                    <h6 class="text-center m-3">@ViewBag.Message</h6>
+                </div>
+            </div>
+            @if (ViewBag.Status == "Active")
+            {
+                <div class="row m-4">
+                    <div class="col-3 text-center">
+                        <a href="/food" class="btn btn-success">Food</a>
+                    </div>
+                    <div class="col-3 text-center">
+                        <a href="/play" class="btn btn-success">Play</a>
+                    </div>
+                    <div class="col-3 text-center">
+                        <a href="/work" class="btn btn-success">Work</a>
+                    </div>
+                    <div class="col-3 text-center">
+                        <a href="/sleep" class="btn btn-success">Sleep</a>
+                    </div>
+                </div>
+            }
+            @if (ViewBag.Status == "Restart")
+            {
+                <div class="row m-4 justify-content-center">
+                    <div class="col-3 text-center">
+                        <a href="/restart" class="btn btn-success">Restart?</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
